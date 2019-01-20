@@ -129,3 +129,14 @@ set noswapfile
 nnoremap <silent> <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
+" Ctags
+set tags=./tags;/
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+"map <C-}> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+"nnoremap <C-}> :execute "vertical ptag " . expand("<cword>")<CR>
+
+
+" Iterate through grep results
+nmap <silent> <C-N> :cn<CR>zv
+nmap <silent> <C-P> :cp<CR>zv
+
