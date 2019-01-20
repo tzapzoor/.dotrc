@@ -30,6 +30,8 @@ Plugin 'fatih/vim-go' " golang development
 Plugin 'jamesroutley/vim-logbook'
 Plugin 'sheerun/vim-polyglot'   " syntax highlighting in most languages
 Plugin 'joshdick/onedark.vim'   " Atom-style dark theme
+Plugin 'justmao945/vim-clang'
+Plugin 'gnattishness/cscope_maps'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -115,9 +117,9 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
 " Tab size
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 
 " Disable swap files
