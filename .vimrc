@@ -32,6 +32,7 @@ Plugin 'sheerun/vim-polyglot'   " syntax highlighting in most languages
 Plugin 'joshdick/onedark.vim'   " Atom-style dark theme
 Plugin 'justmao945/vim-clang'
 Plugin 'gnattishness/cscope_maps'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -140,3 +141,12 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <silent> <C-N> :cn<CR>zv
 nmap <silent> <C-P> :cp<CR>zv
 
+" Nerdtree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeNodeDelimiter = "\u00a0"
+map <C-n> :NERDTreeToggle<CR>
