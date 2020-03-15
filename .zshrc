@@ -98,8 +98,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#source ~/.dotrc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.dotrc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
@@ -111,10 +111,8 @@ prompt_dir() {
   prompt_segment blue $CURRENT_FG '%c'
 }
 
-
 #export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 gotestcoverage() {
 	go test $1 -coverprofile=c.out && go tool cover -html=c.out && rm c.out
 }
-
